@@ -5,13 +5,13 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 retry(3) {
-                    git branch: 'main', url: 'https://github.com/HGSChandeepa/test-node'
+                    git branch: 'main', url: 'https://github.com/imdulaj/cicd'
                 }
             }
         }
         stage('Build Docker Image') {
             steps {  
-                bat 'docker build -t adomicarts/nodeapp-cuban:%BUILD_NUMBER% .'
+                bat 'docker build -t im dulaj/nodeapp-cuban:%BUILD_NUMBER% .'
             }
         }
         stage('Login to Docker Hub') {
